@@ -8,7 +8,13 @@ on:
 
 jobs:
   My-first-CI:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.12", "3.13"]
+
 
     steps:
       - uses: actions/checkout@v6
@@ -16,7 +22,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: 3.13
+          python-version: ${{ matrix.python-version }}
+
 
       # CI fixen
       - name: Install uv
