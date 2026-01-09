@@ -17,9 +17,6 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: 3.13
-      # CI fixen
-      - name: Install uv
-        run: pip install uv
 
       - name: Install the project dependencies using uv
         run: uv sync --locked --all-extras --dev

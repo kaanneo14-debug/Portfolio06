@@ -1,0 +1,12 @@
+[project]
+name = "portfolio06"
+version = "0.1.0"
+description = "Ein Fairsharer Algorithmus der eine ungleiche Vermögensverteilung anpasst"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
